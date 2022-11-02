@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/pages/DialogsPage.dart';
 import 'package:flutter_learning/pages/FormPage.dart';
+import 'package:flutter_learning/pages/ShapePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +36,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(
                           builder: (context) => const FormPage()));
                 },
-                child:const Text('Form',style: TextStyle(color: Colors.white,fontSize: 18),)
+                child:const Text('表单',style: TextStyle(color: Colors.white,fontSize: 18),)
             ),
             TextButton(
                 style: ButtonStyle(
@@ -71,15 +71,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   setState(() {
                   });
                 },
-                child:const Text('reload',style: TextStyle(color: Colors.white,fontSize: 18),)
+                child:const Text('重载',style: TextStyle(color: Colors.white,fontSize: 18),)
             ),
             TextButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.teal)
               ),
-              child:const Text('Dialogs',style: TextStyle(color: Colors.white,fontSize: 18),),
+              child:const Text('弹窗',style: TextStyle(color: Colors.white,fontSize: 18),),
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>const DialogsPage()));
+              },
+            ),
+            TextButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.teal)
+              ),
+              child:const Text('形状',style: TextStyle(color: Colors.white,fontSize: 18),),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const ShapePage()));
               },
             )
           ],
