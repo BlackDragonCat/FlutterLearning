@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/SimpleAlert.dart';
 
-
-
 class DialogsPage extends StatefulWidget {
   const DialogsPage({Key? key}) : super(key: key);
 
@@ -46,6 +44,23 @@ class _DialogsPageState extends State<DialogsPage> {
                 child: const Text('IOS中部弹窗')
             ),
           ),
+          Container(
+            padding: const EdgeInsets.only(top: 20.0),
+                child:  PopupMenuButton(
+                  child: const Text('弹窗'),
+                  offset: const Offset(1,0),
+                  itemBuilder:(context){
+                    return const  [
+                      PopupMenuItem(child: Text('123')),
+                      PopupMenuItem(child: Text('123')),
+                      PopupMenuItem(child: Text('123')),
+                      PopupMenuItem(child: Text('123')),
+                    ];
+                  },
+                )
+
+          ),
+
 
         ],
       ),
@@ -56,8 +71,8 @@ class _DialogsPageState extends State<DialogsPage> {
         context: context,
         builder: (context){
           return CupertinoActionSheet(
-              title: const Text('底部弹窗',style: TextStyle(fontSize: 20),),
-              message: const Text('这是底部弹窗'),
+              title: const Text('IOS底部弹窗',style: TextStyle(fontSize: 20),),
+              message: const Text('IOS这是底部弹窗'),
               actionScrollController: iosBottomActionScrollController,
               messageScrollController:iosBottomMessageScrollController,
               actions:[
